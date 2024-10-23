@@ -4,7 +4,7 @@ Donate link: https://seramo.ir
 Tags: checkout, vpn, alert, woocommerce, ecommerce
 Requires at least: 4.5
 Tested up to: 6.6
-Stable tag: 1.0.1
+Stable tag: 1.1
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -46,8 +46,9 @@ Yes, the Simple Checkout VPN Alert plugin is completely free to use.
 
 == Changelog ==
 
-= 1.0.1 =
+= 1.1 =
 * Added: warp check to alert conditions
+* Fixed: exclude order received page from vpn alert script loading
 
 = 1.0 =
 * Initial Release
