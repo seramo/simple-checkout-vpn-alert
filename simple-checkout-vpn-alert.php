@@ -4,7 +4,7 @@
  * Description: Display a VPN alert on the checkout page.
  * Author:      Rasoul Mousavian
  * Author URI:  https://seramo.ir
- * Version:     1.0.1
+ * Version:     1.1.0
  * License:     GPLv2
  */
 
@@ -38,7 +38,7 @@ class SimpleCheckoutVpnAlert
 
     public static function enqueue_sweetalert_script()
     {
-        if ( ! is_checkout() && ! is_order_received_page() ) {
+        if ( ! is_checkout() || is_order_received_page() ) {
             return;
         }
         wp_enqueue_script( 'sweetalert2', SCVA_ASSETS . 'js/sweetalert2.min.js', array( 'jquery' ), '11.14.4', true );
@@ -46,7 +46,7 @@ class SimpleCheckoutVpnAlert
 
     public static function display_vpn_message()
     {
-        if ( ! is_checkout() && ! is_order_received_page() ) {
+        if ( ! is_checkout() || is_order_received_page() ) {
             return;
         }
         ?>
