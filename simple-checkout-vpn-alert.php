@@ -4,7 +4,7 @@
  * Description: Display a VPN alert on the checkout page.
  * Author:      Rasoul Mousavian
  * Author URI:  https://seramo.ir
- * Version:     1.0.0
+ * Version:     1.0.1
  * License:     GPLv2
  */
 
@@ -56,10 +56,13 @@ class SimpleCheckoutVpnAlert
                     .then(response => response.text())
                     .then(data => {
                         const locRegex = /loc=(.+)/;
-                        const match = data.match(locRegex);
-                        if (match && match[1]) {
-                            const userCountry = match[1].trim();
-                            if (userCountry !== "IR") {
+                        const warpRegex = /warp=(.+)/;
+                        const locMatch = data.match(locRegex);
+                        const warpMatch = data.match(warpRegex);
+                        if (locMatch && locMatch[1] && warpMatch && warpMatch[1]) {
+                            const userCountry = locMatch[1].trim();
+                            const warpStatus = warpMatch[1].trim();
+                            if (userCountry !== "IR" || warpStatus !== "off") {
                                 Swal.fire({
                                     icon: 'warning',
                                     title: 'توجه!',
