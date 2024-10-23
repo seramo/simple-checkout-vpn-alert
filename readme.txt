@@ -47,7 +47,7 @@ Yes, the Simple Checkout VPN Alert plugin is completely free to use.
 == Changelog ==
 
 = 1.0.1 =
-* Added: warp check to alert conditions;
+* Added: warp check to alert conditions
 
 = 1.0 =
 * Initial Release
